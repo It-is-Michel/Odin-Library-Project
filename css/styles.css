@@ -1,0 +1,26 @@
+:root {
+  --color-hsl-main: hsl(220, 16%, 22%);
+  --color-hsl-main-h: 220;
+  --color-hsl-main-s: 16%;
+  --color-hsl-main-l: 22%;
+
+  --color-hsl-secondary: hsl(220, 16%, 36%);
+  --color-hsl-secondary-h: 220;
+  --color-hsl-secondary-s: 16%;
+  --color-hsl-secondary-l: 36%;
+
+  --color-hsl-text: hsl(218, 27%, 94%);
+  --color-hsl-text-h: 218;
+  --color-hsl-text-s: 27%;
+  --color-hsl-text-l: 94%;
+
+  --color-hsl-accent: hsl(193, 43%, 67%);
+  --color-hsl-accent-h: 193;
+  --color-hsl-accent-s: 43%;
+  --color-hsl-accent-l: 67%;
+
+  --color-hsl-complement: hsl(219, 28%, 88%);
+  --color-hsl-complement-h: 219;
+  --color-hsl-complement-s: 28%;
+  --color-hsl-complement-l: 88%;
+}
