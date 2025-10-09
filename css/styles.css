@@ -35,3 +35,30 @@
 
   --font-logotype: 'ChantelliAntiqua', serif;  
 }
+
+.header {
+  height: 4rem;
+
+  background-color: var(--color-hsl-main);
+
+  padding: 2rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__my-library-logotype {
+  font-family: var(--font-logotype);
+  font-size: 2rem;
+  color: var(--color-hsl-text);
+}
+
+.my-library-github-repo-icon {
+  aspect-ratio: 1 / 1;
+  height: 2rem;
+
+  background-image: url(../assets/icons/github.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
