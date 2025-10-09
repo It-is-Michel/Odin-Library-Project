@@ -36,6 +36,12 @@
   --font-logotype: 'ChantelliAntiqua', serif;  
 }
 
+.library {
+  height: calc(100vh - 4rem);
+
+  background-color: var(--color-hsl-secondary);
+}
+
 .header {
   height: 4rem;
 
