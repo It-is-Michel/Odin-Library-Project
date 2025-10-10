@@ -68,3 +68,81 @@
   background-size: contain;
   background-repeat: no-repeat;
 }
+
+.library__controls-container {
+  padding: 0.5rem;
+
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  --flex-items-width: 10ch;
+  --flex-items-max-width: 25ch;
+  --flex-items-height: 2.5rem;
+}
+
+.library__add-book,
+.library__edit-book,
+.library__delete-book {
+  width: var(--flex-items-width);
+  max-width: var(--flex-items-max-width);
+  height: var(--flex-items-height);
+  flex: 1 1 auto;
+
+  border-radius: 0.2rem;
+}
+
+.library__add-book {
+  border: outset hsl(91.3, 70.41%, 44%) 3px;
+  background-color: rgb(95 167 29);
+}
+
+.library__add-book:hover {
+  background-color: hsl(91.3, 70.41%, 37%);
+}
+
+.library__add-book:active {
+  border-style: inset;
+}
+
+.library__edit-book {
+  border: outset hsl(41.4, 69.23%, 60%) 3px;
+  background-color: rgb(209 156 38);
+}
+
+.library__edit-book:hover {
+  background-color: hsl(41.4, 69.23%, 47%);
+}
+
+.library__edit-book:active {
+  border-style: inset;
+}
+
+.library__delete-book {
+  border: outset hsl(0, 76.17%, 63%) 3px;
+  background-color: rgb(227 48 48);
+}
+
+.library__delete-book:hover {
+  background-color: hsl(0, 76.17%, 50%);
+}
+
+.library__delete-book:active {
+  border-style: inset;
+}
+
+.library__add-button-icon,
+.library__edit-button-icon,
+.library__delete-button-icon {
+  aspect-ratio: 1 / 1;
+  height: 1.8rem;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  margin: auto;
+}
+
+.library__add-button-icon {background-image: url(../assets/icons/book-plus.svg)}
+.library__edit-button-icon {background-image: url(../assets/icons/pencil.svg)}
+.library__delete-button-icon {background-image: url(../assets/icons/delete.svg)}
