@@ -33,7 +33,15 @@
   --color-hsl-complement-s: 28%;
   --color-hsl-complement-l: 88%;
 
-  --font-logotype: 'ChantelliAntiqua', serif;  
+  --font-logotype: 'ChantelliAntiqua', serif;
+
+  --icon-svg-add-book: url(../assets/icons/add-book.svg);
+  --icon-svg-edit-book: url(../assets/icons/delete-book.svg);
+  --icon-svg-delete-book: url(../assets/icons/edit-book.svg);
+
+  --button-height-big: calc(2.5rem + 1vh);
+
+  --font-size-big: calc(1.5rem + 1vh);
 }
 
 .library {
@@ -76,73 +84,68 @@
   justify-content: center;
   gap: 0.5rem;
   flex-wrap: wrap;
-  --flex-items-width: 10ch;
-  --flex-items-max-width: 25ch;
-  --flex-items-height: 2.5rem;
+  --button-width-min: 10ch;
+  --button-width-max: 25ch;
 }
 
-.library__add-book,
-.library__edit-book,
-.library__delete-book {
-  width: var(--flex-items-width);
-  max-width: var(--flex-items-max-width);
-  height: var(--flex-items-height);
+/* Size control buttons */
+
+.library__add-book-button,
+.library__edit-book-button,
+.library__delete-book-button {
+  min-width: var(--button-width-min);
+  max-width: var(--button-width-max);
+  height: var(--button-height-big);
   flex: 1 1 auto;
 
   border-radius: 0.2rem;
 }
 
-.library__add-book {
+/* Set button's colors */
+
+.library__add-book-button {
   border: outset hsl(91.3, 70.41%, 44%) 3px;
   background-color: rgb(95 167 29);
 }
-
-.library__add-book:hover {
-  background-color: hsl(91.3, 70.41%, 37%);
-}
-
-.library__add-book:active {
-  border-style: inset;
-}
-
-.library__edit-book {
+.library__edit-book-button {
   border: outset hsl(41.4, 69.23%, 60%) 3px;
   background-color: rgb(209 156 38);
 }
-
-.library__edit-book:hover {
-  background-color: hsl(41.4, 69.23%, 47%);
-}
-
-.library__edit-book:active {
-  border-style: inset;
-}
-
-.library__delete-book {
+.library__delete-book-button {
   border: outset hsl(0, 76.17%, 63%) 3px;
   background-color: rgb(227 48 48);
 }
 
-.library__delete-book:hover {
-  background-color: hsl(0, 76.17%, 50%);
+/* Add icons to the control buttons */
+
+.library__add-book-button {background-image: var(--icon-svg-add-book)}
+.library__edit-book-button {background-image: var(--icon-svg-edit-book)}
+.library__delete-book-button {background-image: var(--icon-svg-delete-book)}
+
+.library__add-book-button,
+.library__edit-book-button,
+.library__delete-book-button {
+  background-size: var(--font-size-big);
+  background-repeat: no-repeat;
+  background-position: 50%;
 }
 
-.library__delete-book:active {
+/* Change cursor to pointer when hovering on control buttons */
+
+.library__add-book-button:hover,
+.library__edit-book-button:hover,
+.library__delete-book-button:hover {cursor: pointer}
+
+/* Set button's color on hover */
+
+.library__add-book-button:hover {background-color: hsl(91.3, 70.41%, 37%);}
+.library__edit-book-button:hover {background-color: hsl(41.4, 69.23%, 47%);}
+.library__delete-book-button:hover {background-color: hsl(0, 76.17%, 50%);}
+
+/* Make buttons look pressed on press */
+
+.library__add-book-button:active,
+.library__edit-book-button:active,
+.library__delete-book-button:active {
   border-style: inset;
 }
-
-.library__add-button-icon,
-.library__edit-button-icon,
-.library__delete-button-icon {
-  aspect-ratio: 1 / 1;
-  height: 1.8rem;
-
-  background-size: contain;
-  background-repeat: no-repeat;
-
-  margin: auto;
-}
-
-.library__add-button-icon {background-image: url(../assets/icons/book-plus.svg)}
-.library__edit-button-icon {background-image: url(../assets/icons/pencil.svg)}
-.library__delete-button-icon {background-image: url(../assets/icons/delete.svg)}
