@@ -39,6 +39,7 @@
 
   --font-logotype: 'ChantelliAntiqua', serif;
 
+  --font-size-normal: calc(1rem + 1vh);
   --font-size-big: calc(1.5rem + 1vh);
   
   --button-height-big: calc(2.5rem + 1vh);
@@ -71,7 +72,7 @@
 
 .header__my-library-logotype {
   font-family: var(--font-logotype);
-  font-size: 2rem;
+  font-size: var(--font-size-big);
   color: var(--color-text-main-hsl);
 }
 
