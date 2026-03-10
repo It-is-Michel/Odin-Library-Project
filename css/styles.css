@@ -78,7 +78,7 @@
 
 .my-library-github-link {
   aspect-ratio: 1 / 1;
-  height: 2rem;
+  height: var(--font-size-big);
 
   background-image: url(../assets/icons/github.svg);
   background-size: contain;
