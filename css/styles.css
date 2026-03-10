@@ -44,15 +44,22 @@
   --font-size-big: calc(1.5rem + 1vh);
 }
 
-.library {
-  height: calc(100vh - 4rem);
+.body-wrapper {
+  --header-height: min-content;
 
+  height: 100vh;
+
+  display: grid;
+  grid-template: 
+    "header" var(--header-height)
+    "body  " auto;
+}
+
+.library {
   background-color: var(--color-hsl-secondary);
 }
 
 .header {
-  height: 4rem;
-
   background-color: var(--color-hsl-main);
 
   padding: 1rem;
