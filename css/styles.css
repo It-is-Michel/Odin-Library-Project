@@ -8,40 +8,40 @@
 }
 
 :root {
-  --color-hsl-main: hsl(220, 16%, 22%);
-  --color-hsl-main-h: 220;
-  --color-hsl-main-s: 16%;
-  --color-hsl-main-l: 22%;
+  --color-main-hsl: hsl(220, 16%, 22%);
+  --color-main-hsl-h: 220;
+  --color-text-main-hsl-s: 16%;
+  --color-main-hsl-l: 22%;
 
-  --color-hsl-secondary: hsl(220, 16%, 36%);
-  --color-hsl-secondary-h: 220;
-  --color-hsl-secondary-s: 16%;
-  --color-hsl-secondary-l: 36%;
+  --color-secondary-hsl: hsl(220, 16%, 36%);
+  --color-secondary-hsl-h: 220;
+  --color-secondary-hsl-s: 16%;
+  --color-secondary-hsl-l: 36%;
 
-  --color-hsl-text: hsl(218, 27%, 94%);
-  --color-hsl-text-h: 218;
-  --color-hsl-text-s: 27%;
-  --color-hsl-text-l: 94%;
+  --color-text-main-hsl: hsl(218, 27%, 94%);
+  --color-text-main-hsl-h: 218;
+  --color-text-main-hsl-s: 27%;
+  --color-text-main-hsl-l: 94%;
 
-  --color-hsl-accent: hsl(193, 43%, 67%);
-  --color-hsl-accent-h: 193;
-  --color-hsl-accent-s: 43%;
-  --color-hsl-accent-l: 67%;
+  --color-accent-hsl: hsl(193, 43%, 67%);
+  --color-accent-hsl-h: 193;
+  --color-accent-hsl-s: 43%;
+  --color-accent-hsl-l: 67%;
 
-  --color-hsl-complement: hsl(219, 28%, 88%);
-  --color-hsl-complement-h: 219;
-  --color-hsl-complement-s: 28%;
-  --color-hsl-complement-l: 88%;
-
-  --font-logotype: 'ChantelliAntiqua', serif;
+  --color-complement-hsl: hsl(219, 28%, 88%);
+  --color-complement-hsl-h: 219;
+  --color-complement-hsl-s: 28%;
+  --color-complement-hsl-l: 88%;
 
   --icon-svg-add-book: url(../assets/icons/add-book.svg);
   --icon-svg-edit-book: url(../assets/icons/delete-book.svg);
   --icon-svg-delete-book: url(../assets/icons/edit-book.svg);
 
-  --button-height-big: calc(2.5rem + 1vh);
+  --font-logotype: 'ChantelliAntiqua', serif;
 
   --font-size-big: calc(1.5rem + 1vh);
+  
+  --button-height-big: calc(2.5rem + 1vh);
 }
 
 .body-wrapper {
@@ -56,11 +56,11 @@
 }
 
 .library {
-  background-color: var(--color-hsl-secondary);
+  background-color: var(--color-secondary-hsl);
 }
 
 .header {
-  background-color: var(--color-hsl-main);
+  background-color: var(--color-main-hsl);
 
   padding: 1rem;
 
@@ -72,7 +72,7 @@
 .header__my-library-logotype {
   font-family: var(--font-logotype);
   font-size: 2rem;
-  color: var(--color-hsl-text);
+  color: var(--color-text-main-hsl);
 }
 
 .my-library-github-link {
