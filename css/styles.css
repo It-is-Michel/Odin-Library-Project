@@ -251,7 +251,7 @@
   --color-status-error: rgb(255, 0, 0);
 
   display: grid;
-  grid-template-columns: min-content min-content;
+  grid-template-columns: min-content max-content;
   gap: 0.5rex;
 }
 
