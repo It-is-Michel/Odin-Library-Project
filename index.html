@@ -44,6 +44,30 @@
     
   <div class="overlay">
 
+    <form class="modify-book" novalidate>
+
+      <div class="book__edit-cover"></div>
+
+      <div class="book__title-wrapper">
+        <input id="book__edit-title-input" class="book__edit-title-input" placeholder="Add title..." maxlength="20" cols="0"></input>
+        <cite class="book__edit-author-wrapper">by<input id="book__edit-author-input" class="book__edit-author-input" placeholder="add author..." maxlength="30"></input></cite>
+      </div>
+
+      <textarea class="book__edit-summary-textarea" placeholder="Add summary..."></textarea>
+      
+      <span class="book__pages">
+
+        <span class="book__read-status-editing">Editing</span>
+
+        <div class="book__pages-wrapper">
+          <input id="book__pages-read-input" class="book__pages-read-input" placeholder="0" pattern="[0-9]+" min="0" maxlength="4"> /
+          <input id="book__total-pages-input" class="book__total-pages-input" placeholder="999" pattern="[0-9]+" min="1" maxlength="4"> pages
+        </div>
+
+      </span>
+
+    </form>
+
   </div>
 
 </body>

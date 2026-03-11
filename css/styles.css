@@ -41,6 +41,7 @@
   --icon-svg-add-book: url(../assets/icons/add-book.svg);
   --icon-svg-edit-book: url(../assets/icons/edit-book.svg);
   --icon-svg-delete-book: url(../assets/icons/delete-book.svg);
+  --icon-svg-plus: url(../assets/icons/plus.svg);
 
   --font-logotype: 'ChantelliAntiqua', serif;
 
@@ -168,7 +169,8 @@
 
 /* Books */
 
-.book {
+.book,
+.modify-book {
   --book-cover-size: cover;
   --book-cover-aspect-ratio: 1 / 1.5;
   --book-title-height: min-content;
@@ -193,10 +195,13 @@
   overflow: hidden;
 }
 
-.book__cover {
+.book__cover,
+.book__edit-cover {
   grid-area: cover;
 
   aspect-ratio: var(--book-cover-aspect-ratio);
+  
+  padding: 30% 0.5rem;
 
   background-color: hsl(0, 0%, 100%);
 }
@@ -212,21 +217,26 @@
 }
 
 .book__title,
-.book__author {
+.book__author,
+.book__edit-title-input,
+.book__edit-author-wrapper {
   display: inline;
 }
 
-.book__title {
+.book__title,
+.book__edit-title-input {
   margin: 0;
 
   font-size: var(--font-size-title-normal);
 }
 
-.book__author {
+.book__author,
+.book__edit-author-wrapper {
   font-size: var(--font-size-text-tiny);
 }
 
-.book__summary {
+.book__summary,
+.book__edit-summary-textarea {
   grid-area: summary;
 
   height: var(--book-summary-height);
@@ -253,10 +263,12 @@
 .book__read-status-read,
 .book__read-status-reading,
 .book__read-status-not-read,
-.book__read-status-error {
+.book__read-status-error,
+.book__read-status-editing {
   --color-status-read: rgb(102, 255, 0);
   --color-status-reading: rgb(0, 179, 255);
   --color-status-not-read: rgb(129, 129, 129);
+  --color-status-editing: var(--color-status-not-read);
   --color-status-error: rgb(255, 0, 0);
 
   display: grid;
@@ -267,7 +279,8 @@
 .book__read-status-read::before,
 .book__read-status-reading::before,
 .book__read-status-not-read::before,
-.book__read-status-error::before {
+.book__read-status-error::before,
+.book__read-status-editing::before {
   content: "";
 
   place-self: center center;
@@ -282,6 +295,7 @@
 .book__read-status-reading::before {background-color: var(--color-status-reading)}
 .book__read-status-not-read::before {background-color: var(--color-status-not-read)}
 .book__read-status-error::before {background-color: var(--color-status-error)}
+.book__read-status-editing::before {background-color: var(--color-status-editing)}
 
 /* Add book form */
 
@@ -296,4 +310,96 @@
   place-content: center;
 
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.book__edit-title-input {
+  font-weight: 700;
+}
+
+.book__edit-author-wrapper {
+  display: grid;
+  grid-template-columns: min-content auto;
+  gap: 0.5rex;
+  align-items: baseline;
+}
+
+.book__edit-author-input {
+  font-style: italic;
+
+}
+
+.book__edit-title-input,
+.book__edit-author-input {
+  height: var(--font-size-title-normal);
+}
+
+.book__edit-summary-textarea {
+  height: var(--book-summary-height);
+
+  resize: none;
+}
+
+.book__edit-title-input,
+.book__edit-author-input,
+.book__edit-summary-textarea,
+.book__pages-read-input,
+.book__total-pages-input {
+  padding: 0;
+  border: none;
+
+  background-color: transparent;
+  overflow: hidden;
+}
+
+.book__edit-title-input:focus,
+.book__edit-author-input:focus,
+.book__edit-summary-textarea:focus,
+.book__pages-read-input:focus,
+.book__total-pages-input:focus {
+  outline: none;
+}
+
+.book__pages-wrapper {
+  height: var(--font-size-text-tiny);
+}
+
+.book__pages-read-input,
+.book__total-pages-input {
+  width: 5rex;
+  height: var(--font-size-text-tiny);
+
+  margin: 0 0.5rex;
+
+  background-color: white;
+
+  text-align: center;
+}
+
+.book__edit-cover {
+  position: relative;
+
+  border: 1px outset var(--color-text-dark-hsl);
+
+  background-image: var(--icon-svg-plus);
+  background-size: 50% auto;
+  background-repeat: no-repeat;
+  background-position: 50% 55%;
+}
+
+.book__edit-cover::before {
+  content: "Load cover";
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+.book__edit-cover:hover {
+  border-style: inset;
+  background-size: 55% auto;
+}
+
+.book__edit-cover:hover::before {
+  font-size: var(--font-size-text-normal);
+  position: relative;
+  top: calc(var(--font-size-text-normal) / -3)
 }
