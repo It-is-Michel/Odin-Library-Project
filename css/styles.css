@@ -201,6 +201,11 @@
 
 .book__title-wrapper {
   grid-area: title;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rex;
+  align-items: baseline;
 }
 
 .book__title,
@@ -209,6 +214,8 @@
 }
 
 .book__title {
+  margin: 0;
+
   font-size: var(--font-size-title-normal);
 }
 
