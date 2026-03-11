@@ -34,8 +34,8 @@
   --color-complement-hsl-l: 88%;
 
   --icon-svg-add-book: url(../assets/icons/add-book.svg);
-  --icon-svg-edit-book: url(../assets/icons/delete-book.svg);
-  --icon-svg-delete-book: url(../assets/icons/edit-book.svg);
+  --icon-svg-edit-book: url(../assets/icons/edit-book.svg);
+  --icon-svg-delete-book: url(../assets/icons/delete-book.svg);
 
   --font-logotype: 'ChantelliAntiqua', serif;
 
