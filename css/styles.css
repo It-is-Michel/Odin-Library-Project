@@ -189,6 +189,8 @@
   background-color: #F1EDE3;
 
   color: var(--color-text-dark-hsl);
+
+  overflow: hidden;
 }
 
 .book__cover {
