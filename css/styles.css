@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'ChantelliAntiqua';
-    src: url('../fonts/ChantelliAntiqua.woff2') format('woff2'),
-        url('../fonts/ChantelliAntiqua.woff') format('woff');
+    src: url('../assets/fonts/ChantelliAntiqua.woff2') format('woff2'),
+        url('../assets/fonts/ChantelliAntiqua.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -10,7 +10,7 @@
 :root {
   --color-main-hsl: hsl(220, 16%, 22%);
   --color-main-hsl-h: 220;
-  --color-text-main-hsl-s: 16%;
+  --color-main-hsl-s: 16%;
   --color-main-hsl-l: 22%;
 
   --color-secondary-hsl: hsl(220, 16%, 36%);
@@ -23,6 +23,11 @@
   --color-text-main-hsl-s: 27%;
   --color-text-main-hsl-l: 94%;
 
+  --color-text-dark-hsl: hsl(193, 100%, 5%);
+  --color-text-dark-hsl-h: 193;
+  --color-text-dark-hsl-s: 100%;
+  --color-text-dark-hsl-l: 5%;
+
   --color-accent-hsl: hsl(193, 43%, 67%);
   --color-accent-hsl-h: 193;
   --color-accent-hsl-s: 43%;
@@ -34,15 +39,18 @@
   --color-complement-hsl-l: 88%;
 
   --icon-svg-add-book: url(../assets/icons/add-book.svg);
-  --icon-svg-edit-book: url(../assets/icons/delete-book.svg);
-  --icon-svg-delete-book: url(../assets/icons/edit-book.svg);
+  --icon-svg-edit-book: url(../assets/icons/edit-book.svg);
+  --icon-svg-delete-book: url(../assets/icons/delete-book.svg);
 
   --font-logotype: 'ChantelliAntiqua', serif;
 
-  --font-size-normal: calc(1rem + 1vh);
-  --font-size-big: calc(1.5rem + 1vh);
+  --font-size-text-tiny: calc(0.9rem + 0.1vh);
+  --font-size-text-normal: calc(1rem + 0.1vh);
+  --font-size-text-big: calc(2rem + 0.1vh);
+
+  --font-size-title-normal: calc(1.2rem + 0.1vh);
   
-  --button-height-big: calc(2.5rem + 1vh);
+  --button-height-big: calc(var(--font-size-text-big) + 1rem);
 }
 
 .body-wrapper {
@@ -72,13 +80,13 @@
 
 .header__my-library-logotype {
   font-family: var(--font-logotype);
-  font-size: var(--font-size-big);
+  font-size: var(--font-size-text-big);
   color: var(--color-text-main-hsl);
 }
 
 .my-library-github-link {
   aspect-ratio: 1 / 1;
-  height: var(--font-size-big);
+  height: var(--font-size-text-big);
 
   background-image: url(../assets/icons/github.svg);
   background-size: contain;
@@ -133,7 +141,7 @@
 .library__add-book-button,
 .library__edit-book-button,
 .library__delete-book-button {
-  background-size: var(--font-size-big);
+  background-size: var(--font-size-text-big);
   background-repeat: no-repeat;
   background-position: 50%;
 }
@@ -157,3 +165,120 @@
 .library__delete-book-button:active {
   border-style: inset;
 }
+
+/* Books */
+
+.book {
+  --book-cover-size: cover;
+  --book-cover-aspect-ratio: 1 / 1.5;
+  --book-title-height: min-content;
+  --book-summary-height: calc(7rem + 1vh);
+  --book-pages-height: min-content;
+  --book-gap-size: 1.5vh;
+
+  display: inline-grid;
+  grid-template: 
+    "cover title" var(--book-title-height)
+    "cover summary" var(--book-summary-height)
+    "cover pages" var(--book-pages-height) / min-content minmax(min-content, calc(40rex + 2vw));
+  padding: var(--book-gap-size);
+  gap: var(--book-gap-size);
+
+  border-radius: 0.25rem;
+
+  background-color: #F1EDE3;
+
+  color: var(--color-text-dark-hsl);
+
+  overflow: hidden;
+}
+
+.book__cover {
+  grid-area: cover;
+
+  aspect-ratio: var(--book-cover-aspect-ratio);
+
+  background-color: hsl(0, 0%, 100%);
+}
+
+.book__title-wrapper {
+  grid-area: title;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rex;
+  align-items: baseline;
+}
+
+.book__title,
+.book__author {
+  display: inline;
+}
+
+.book__title {
+  margin: 0;
+
+  font-size: var(--font-size-title-normal);
+}
+
+.book__author {
+  font-size: var(--font-size-text-tiny);
+}
+
+.book__summary {
+  grid-area: summary;
+
+  height: var(--book-summary-height);
+
+  margin: 0;
+
+  font-size: var(--font-size-text-normal);
+  line-height: 1.5;
+
+  overflow: hidden;
+}
+
+.book__pages {
+  grid-area: pages; 
+
+  height: var(--book-pages-height);
+
+  display: flex;
+  justify-content: space-between;
+
+  font-size: var(--font-size-text-tiny);
+}
+
+.book__read-status-read,
+.book__read-status-reading,
+.book__read-status-not-read,
+.book__read-status-error {
+  --color-status-read: rgb(102, 255, 0);
+  --color-status-reading: rgb(0, 179, 255);
+  --color-status-not-read: rgb(129, 129, 129);
+  --color-status-error: rgb(255, 0, 0);
+
+  display: grid;
+  grid-template-columns: min-content max-content;
+  gap: 0.5rex;
+}
+
+.book__read-status-read::before,
+.book__read-status-reading::before,
+.book__read-status-not-read::before,
+.book__read-status-error::before {
+  content: "";
+
+  place-self: center center;
+
+  display: inline-block;
+  height: 70%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-color: var(--color-status-read);
+}
+
+.book__read-status-read::before {background-color: var(--color-status-read)}
+.book__read-status-reading::before {background-color: var(--color-status-reading)}
+.book__read-status-not-read::before {background-color: var(--color-status-not-read)}
+.book__read-status-error::before {background-color: var(--color-status-error)}
