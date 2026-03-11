@@ -10,7 +10,7 @@
 :root {
   --color-main-hsl: hsl(220, 16%, 22%);
   --color-main-hsl-h: 220;
-  --color-text-main-hsl-s: 16%;
+  --color-main-hsl-s: 16%;
   --color-main-hsl-l: 22%;
 
   --color-secondary-hsl: hsl(220, 16%, 36%);
