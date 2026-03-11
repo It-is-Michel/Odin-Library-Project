@@ -75,13 +75,13 @@
 
 .header__my-library-logotype {
   font-family: var(--font-logotype);
-  font-size: var(--font-size-big);
+  font-size: var(--font-size-text-big);
   color: var(--color-text-main-hsl);
 }
 
 .my-library-github-link {
   aspect-ratio: 1 / 1;
-  height: var(--font-size-big);
+  height: var(--font-size-text-big);
 
   background-image: url(../assets/icons/github.svg);
   background-size: contain;
@@ -136,7 +136,7 @@
 .library__add-book-button,
 .library__edit-book-button,
 .library__delete-book-button {
-  background-size: var(--font-size-big);
+  background-size: var(--font-size-text-big);
   background-repeat: no-repeat;
   background-position: 50%;
 }
