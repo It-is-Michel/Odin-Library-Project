@@ -1,7 +1,3 @@
-function createBook(title, author, summary, coverImageFile, totalPages, pagesRead) {
-  let newBook = new Book(title, author, summary, coverImageFile, totalPages, pagesRead);
-}
-
 function Book(title, author, summary, pagesRead, totalPages, coverImageFile) {
   this.bookElement = document.createElement("article");
   this.bookElement.classList.add("book");
