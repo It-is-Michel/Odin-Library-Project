@@ -39,10 +39,13 @@
 
   --font-logotype: 'ChantelliAntiqua', serif;
 
-  --font-size-normal: calc(1rem + 1vh);
-  --font-size-big: calc(1.5rem + 1vh);
+  --font-size-text-tiny: calc(0.9rem + 0.1vh);
+  --font-size-text-normal: calc(1rem + 0.1vh);
+  --font-size-text-big: calc(2rem + 0.1vh);
+
+  --font-size-title-normal: calc(1.2rem + 0.1vh);
   
-  --button-height-big: calc(2.5rem + 1vh);
+  --button-height-big: calc(var(--font-size-text-big) + 1rem);
 }
 
 .body-wrapper {
