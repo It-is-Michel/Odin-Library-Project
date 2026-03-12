@@ -44,28 +44,28 @@
     
   <div class="overlay">
 
-    <form id="modify-book-form" class="modify-book-form" novalidate>
+    <form id="modifyBookForm" class="modify-book-form" novalidate>
 
       <div class="modify-book-form__book-wrapper">
-        <div class="book__edit-cover"></div>
+        <div id="modifyBookFormCoverSelectFile" class="book__edit-cover"></div>
         <div class="book__title-wrapper">
-          <input id="book__edit-title-input" class="book__edit-title-input" placeholder="Add title..." maxlength="20" cols="0"></input>
-          <cite class="book__edit-author-wrapper">by<input id="book__edit-author-input" class="book__edit-author-input" placeholder="add author..." maxlength="30"></input></cite>
+          <input id="modifyBookFormTitleInput" class="book__edit-title-input" placeholder="Add title..." maxlength="20" cols="0"></input>
+          <cite class="book__edit-author-wrapper">by<input id="modifyBookFormAuthorInput" class="book__edit-author-input" placeholder="add author..." maxlength="30"></input></cite>
         </div>
-        <textarea id="book__edit-summary-textarea" class="book__edit-summary-textarea" placeholder="Add summary..."></textarea>
+        <textarea id="modifyBookFormEditSummaryTextarea" class="book__edit-summary-textarea" placeholder="Add summary..."></textarea>
         
         <span class="book__pages">
           <span class="book__read-status-editing">Editing</span>
           <div class="book__pages-wrapper">
-            <input id="book__pages-read-input" class="book__pages-read-input" placeholder="0" pattern="[0-9]+" min="0" maxlength="4"> /
-            <input id="book__total-pages-input" class="book__total-pages-input" placeholder="999" pattern="[0-9]+" min="1" maxlength="4"> pages
+            <input id="modifyBookFormPagesReadInput" class="book__pages-read-input" placeholder="0" pattern="[0-9]+" min="0" maxlength="4"> /
+            <input id="modifyBookFormTotalPagesInput" class="book__total-pages-input" placeholder="999" pattern="[0-9]+" min="1" maxlength="4"> pages
           </div>
         </span>
       </div>
 
       <div class="modify-book-form__buttons-wrapper">
-        <button id="modify-book-form__cancel-book-button" class="modify-book-form__cancel-button" type="button">Cancel</button>
-        <button id="modify-book-form__accept-button" class="modify-book-form__add-book-button" type="button">Add</button>
+        <button id="modifyBookFormCancelButton" class="modify-book-form__cancel-button" type="button">Cancel</button>
+        <button id="modifyBookFormAcceptButton" class="modify-book-form__add-book-button" type="button">Add</button>
       </div>
       
     </form>
