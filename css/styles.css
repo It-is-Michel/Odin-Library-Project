@@ -170,7 +170,7 @@
 /* Books */
 
 .book,
-.modify-book {
+.modify-book-form {
   --book-cover-size: cover;
   --book-cover-aspect-ratio: 1 / 1.5;
   --book-title-height: min-content;
