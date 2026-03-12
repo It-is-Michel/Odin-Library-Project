@@ -120,24 +120,27 @@
 
 /* Set button's colors */
 
-.library__add-book-button {
+.library__add-book-button,
+.modify-book-form__add-book-button {
   border: outset hsl(91.3, 70.41%, 44%) 3px;
   background-color: rgb(95 167 29);
 }
-.library__edit-book-button {
+.library__edit-book-button,
+.modify-book-form__edit-book-button {
   border: outset hsl(41.4, 69.23%, 60%) 3px;
   background-color: rgb(209 156 38);
 }
-.library__delete-book-button {
+.library__delete-book-button,
+.modify-book-form__cancel-button {
   border: outset hsl(0, 76.17%, 63%) 3px;
   background-color: rgb(227 48 48);
 }
 
 /* Add icons to the control buttons */
 
-.library__add-book-button {background-image: var(--icon-svg-add-book)}
-.library__edit-book-button {background-image: var(--icon-svg-edit-book)}
-.library__delete-book-button {background-image: var(--icon-svg-delete-book)}
+.library__add-book-button, .modify-book-form__add-book-button::before {background-image: var(--icon-svg-add-book)}
+.library__edit-book-button, .modify-book-form__edit-book-button::before {background-image: var(--icon-svg-edit-book)}
+.library__delete-book-button, .modify-book-form__cancel-button::before {background-image: var(--icon-svg-delete-book)}
 
 .library__add-book-button,
 .library__edit-book-button,
@@ -151,19 +154,34 @@
 
 .library__add-book-button:hover,
 .library__edit-book-button:hover,
-.library__delete-book-button:hover {cursor: pointer}
+.library__delete-book-button:hover,
+.modify-book-form__add-book-button:hover,
+.modify-book-form__edit-book-button:hover,
+.modify-book-form__cancel-button:hover {cursor: pointer}
 
 /* Set button's color on hover */
 
-.library__add-book-button:hover {background-color: hsl(91.3, 70.41%, 37%);}
-.library__edit-book-button:hover {background-color: hsl(41.4, 69.23%, 47%);}
-.library__delete-book-button:hover {background-color: hsl(0, 76.17%, 50%);}
+.library__add-book-button:hover,
+.modify-book-form__add-book-button:hover {
+  background-color: hsl(91.3, 70.41%, 37%)
+}
+.library__edit-book-button:hover,
+.modify-book-form__edit-book-button:hover {
+  background-color: hsl(41.4, 69.23%, 47%)
+}
+.library__delete-book-button:hover,
+.modify-book-form__cancel-button:hover {
+  background-color: hsl(0, 76.17%, 50%)
+}
 
 /* Make buttons look pressed on press */
 
 .library__add-book-button:active,
 .library__edit-book-button:active,
-.library__delete-book-button:active {
+.library__delete-book-button:active,
+.modify-book-form__add-book-button:active,
+.modify-book-form__edit-book-button:active,
+.modify-book-form__cancel-button:active {
   border-style: inset;
 }
 
@@ -402,4 +420,46 @@
   font-size: var(--font-size-text-normal);
   position: relative;
   top: calc(var(--font-size-text-normal) / -3)
+}
+
+.modify-book-form__buttons-wrapper {
+  margin-top: 1rem;
+
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: min-content;
+  justify-content: end;
+  gap: 2.5rex;
+}
+
+.modify-book-form__cancel-button,
+.modify-book-form__add-book-button,
+.modify-book-form__edit-book-button {
+  width: 15rex;
+  height: calc(var(--font-size-text-normal) + 3rex);
+  
+  padding: 0 1rex;
+  border-radius: 2px;
+
+  display: grid;
+  grid-template-columns: var(--font-size-text-normal) auto;
+  gap: 1rex;
+  align-items: center;
+
+  font-size: var(--font-size-text-normal);
+  font-weight: 500;
+  color: var(--color-text-main-hsl);
+}
+
+.modify-book-form__cancel-button::before,
+.modify-book-form__add-book-button::before,
+.modify-book-form__edit-book-button::before {
+  content: "";
+
+  height: 75%;
+  aspect-ratio: 1 / 1;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50%;
 }
