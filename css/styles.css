@@ -66,6 +66,11 @@
 }
 
 .library {
+  padding: 1rem 2rem;
+  display: grid;
+  grid-auto-rows: min-content;
+  gap: 1rem;
+
   background-color: var(--color-secondary-hsl);
 }
 
@@ -95,7 +100,6 @@
 }
 
 .library__controls-container {
-  padding: 0.5rem;
 
   display: flex;
   justify-content: center;
@@ -185,6 +189,15 @@
   border-style: inset;
 }
 
+/* End */
+
+.library__books {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min-content, 60rex));
+  gap: 2rex;
+  justify-content: center;
+}
+
 /* Books */
 
 .book,
@@ -195,6 +208,8 @@
   --book-summary-height: calc(7rem + 1vh);
   --book-pages-height: min-content;
   --book-gap-size: 1.5vh;
+
+  width: max-content;
 
   display: inline-grid;
   grid-template: 
