@@ -19,14 +19,14 @@
       <a class="my-library-github-link" href="https://github.com/It-is-Michel/Odin-Library-Project"></a>
     </header>
   
-    <div class="library">
+    <div id="library" class="library">
       <div class="library__controls-container">
-        <button type="button" class="library__add-book-button"></button>
-        <button type="button" class="library__edit-book-button"></button>
-        <button type="button" class="library__delete-book-button"></button>
+        <button id="libraryAddBookButton" type="button" class="library__add-book-button"></button>
+        <button id="libraryEditBookButton" type="button" class="library__edit-book-button"></button>
+        <button id="libraryDeleteBookButton" type="button" class="library__delete-book-button"></button>
       </div>
   
-      <main class="library__books">
+      <main id="libraryBooksContainer" class="library__books">
         <!-- Books added with javascript go here -->
         <article class="book">
           <div class="book__cover"></div>
@@ -42,12 +42,12 @@
     
   </div>
     
-  <div class="overlay">
+  <div id="overlay" class="overlay" style="display: none">
 
-    <form id="modifyBookForm" class="modify-book-form" novalidate>
+    <form id="modifyBookForm" style="display: none" class="modify-book-form" novalidate>
 
       <div class="modify-book-form__book-wrapper">
-        <div id="modifyBookFormCoverSelectFile" class="book__edit-cover"></div>
+        <div id="modifyBookFormCoverDropBox" class="book__edit-cover"></div>
         <div class="book__title-wrapper">
           <input id="modifyBookFormTitleInput" class="book__edit-title-input" placeholder="Add title..." maxlength="20" cols="0"></input>
           <cite class="book__edit-author-wrapper">by<input id="modifyBookFormAuthorInput" class="book__edit-author-input" placeholder="add author..." maxlength="30"></input></cite>
