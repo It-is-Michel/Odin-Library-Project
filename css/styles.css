@@ -243,6 +243,8 @@
   padding: 30% 0.5rem;
 
   background-color: hsl(0, 0%, 100%);
+
+  text-align: center;
 }
 
 .book__title-wrapper {
