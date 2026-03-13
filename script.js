@@ -109,7 +109,7 @@ Book.prototype.setCoverImg = function(coverImageFile) {
 
   this.coverFileReader.onload = (e) => {
     const coverImageUrl = e.target.result;
-    this.coverElement.style.backgroundImage = coverImageUrl;
+    this.coverElement.style.backgroundImage = `url("${coverImageUrl}")`;
   }
   this.coverFileReader.readAsDataURL(coverImageFile);
 }
@@ -128,6 +128,7 @@ const LibraryController = {
 
     _fields: {
       coverDropBox: document.querySelector("#modifyBookFormCoverDropBox"),
+      coverInput: document.querySelector("#modifyBookFormCoverInput"),
       titleInput: document.querySelector("#modifyBookFormTitleInput"),
       authorInput: document.querySelector("#modifyBookFormAuthorInput"),
       summaryTextarea: document.querySelector("#modifyBookFormEditSummaryTextarea"),
@@ -170,7 +171,7 @@ const LibraryController = {
       this._fields.summaryTextarea.value = bookData.summary;
       this._fields.pagesReadInput.value = bookData.pagesRead;
       this._fields.totalPagesInput.value = bookData.totalPages;
-      this._fields.coverDropBox.value = bookData.coverImageFile;
+      this._fields.coverInput.files[0] = bookData.coverImageFile;
     },
 
     getUpdatedBookData(bookData) {
@@ -250,7 +251,7 @@ const LibraryController = {
       summary: this._fields.summaryTextarea.value,
       pagesRead: Number(this._fields.pagesReadInput.value),
       totalPages: Number(this._fields.totalPagesInput.value),
-      coverImageFile: this._fields.coverDropBox.value,
+      coverImageFile: this._fields.coverInput.files[0],
       };
       return formData;
     },
@@ -286,7 +287,7 @@ const LibraryController = {
       this._fields.summaryTextarea.value = "";
       this._fields.pagesReadInput.value = "";
       this._fields.totalPagesInput.value = "";
-      this._fields.coverDropBox.value = "";
+      this._fields.coverInput.files[0] = "";
     },
 
     init() {
@@ -301,8 +302,14 @@ const LibraryController = {
           this._rejectSubmit();
           return;
         };
+        if (e.target.closest(`#${this._fields.coverDropBox.id}`)) {
+          this._fields.coverInput.click();
+          return;
+        }
       };
       this._bookForm.addEventListener("click", clickEventHandler);
+
+      // this._fields.coverInput.addEventListener("drop", drop);
     }
   },
 

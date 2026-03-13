@@ -228,6 +228,12 @@
   overflow: hidden;
 }
 
+.book__cover {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
 .book__cover,
 .book__edit-cover {
   grid-area: cover;
@@ -407,6 +413,10 @@
   background-color: white;
 
   text-align: center;
+}
+
+.modify-book-form__cover-input {
+  display: none;
 }
 
 .book__edit-cover {
