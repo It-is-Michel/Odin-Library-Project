@@ -265,6 +265,7 @@
   line-height: 1.5;
 
   text-overflow: clip;
+  overflow: auto;
 }
 
 .book__pages {
